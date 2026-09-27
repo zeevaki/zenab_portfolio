@@ -25,16 +25,38 @@ function toggleContrast() {
   }
 }
 
+function setCurrency(currency) {
+  document.querySelectorAll("[data-pkr]").forEach((el) => {
+    el.textContent = el.dataset[currency];
+  });
+  document.querySelectorAll(".currency__btn").forEach((btn) => {
+    btn.classList.toggle("currency__btn--active", btn.dataset.currency === currency);
+  });
+}
+
 function contact(event) {
   event.preventDefault();
   const loading = document.querySelector(".modal__overlay--loading");
   const success = document.querySelector(".modal__overlay--success");
   loading.classList += " modal__overlay--visible";
+  // Project type and budget are folded into the message so the existing
+  // EmailJS template (name, email, message) delivers them without changes.
+  const form = event.target;
+  const details = [];
+  if (form.project_type) details.push(`Reaching out about: ${form.project_type.value}`);
+  if (form.budget && form.budget.value) details.push(`Budget: ${form.budget.value}`);
+  const message = details.length
+    ? `${details.join("\n")}\n\n${form.message.value}`
+    : form.message.value;
   emailjs
-    .sendForm(
+    .send(
       "service_qxdnyg4",
       "template_zkdk6zl",
-      event.target,
+      {
+        user_name: form.user_name.value,
+        user_email: form.user_email.value,
+        message,
+      },
       "URaLON_8OTzDkIS1D"
     )
     .then(() => {

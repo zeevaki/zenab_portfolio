@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zenab Waqi | Frontend Software Engineer</title>
-  <meta name="description" content="Zenab Waqi — Frontend Software Engineer specializing in React, Next.js, JavaScript, and Firebase. 5 live deployed projects and 80,000+ community built.">
+  <title>Zenab Waqi | Frontend Developer &amp; Web Designer</title>
+  <meta name="description" content="Zenab Waqi — frontend developer building fast, modern websites and web apps for small and mid-size businesses, educators, and startups. English, Urdu, and bilingual sites.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="/assets/gemini-svg.svg" type="image/x-icon">
@@ -40,12 +40,26 @@
             link__hover-effect--black
           ">About</a>
         </li>
-        <li class="nav__link">
-          <a href="#projects" class="
+        <li class="nav__link nav__link--wide">
+          <a href="#services" class="
             nav__link--anchor
             link__hover-effect
             link__hover-effect--black
-          ">Projects</a>
+          ">Services</a>
+        </li>
+        <li class="nav__link">
+          <a href="#pricing" class="
+            nav__link--anchor
+            link__hover-effect
+            link__hover-effect--black
+          ">Pricing</a>
+        </li>
+        <li class="nav__link nav__link--wide">
+          <a href="#work" class="
+            nav__link--anchor
+            link__hover-effect
+            link__hover-effect--black
+          ">Work</a>
         </li>
         <li class="nav__link" onclick="toggleModal()">
           <a href="#" class="
@@ -68,27 +82,32 @@
         <div class="header__content">
           <h1 class="title">Hey</h1>
           <h1 class="title orange">I'm Zenab.</h1>
-          <p class="header__para">
-            I'm a <b class="orange">Frontend Software Engineer</b> with a passion for building user-centric
-            applications and delivering seamless digital experiences.
-            <br>
-            Here's a bit more <b class="orange click" onclick="toggleModal()">about me</b>.
+          <p class="header__para header__para--wide">
+            I'm a <b class="orange">frontend developer</b> who builds fast, modern websites and web apps
+            for small businesses, educators, and startups. I'm also a teacher, so I build tools that real
+            people actually use. My own app, <b class="orange">TeachingPulse</b>, is one I use every day in my classroom.
           </p>
-          <div class="social__list">
-            <a href="https://www.linkedin.com/in/zenab-waqi" target="_blank" class="social__link click">
-              <i class="fa-brands fa-linkedin-in"></i>
+          <div class="header__ctas">
+            <a href="#" class="cta cta--primary click" onclick="toggleModal()">
+              <i class="fas fa-paper-plane"></i>
+              Start a project
             </a>
-            <a href="https://github.com/zeevaki" target="_blank" class="social__link click">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="./resume.html" target="_blank" class="social__link click">
-              <i class="fas fa-file-pdf"></i>
+            <a href="./resume.html" target="_blank" class="resume__cta">
+              <i class="fas fa-file-alt"></i>
+              View my résumé
             </a>
           </div>
-          <a href="./assets/Zenab_Waqi_Resume.pdf" download="Zenab_Waqi_Resume.pdf" class="resume__cta click">
-            <i class="fas fa-file-download"></i>
-            Download Resume
-          </a>
+          <div class="social__list">
+            <a href="https://www.linkedin.com/in/zenab-waqi" target="_blank" class="social__link click" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/zeevaki" target="_blank" class="social__link click" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="./assets/Zenab_Waqi_Resume.pdf" download="Zenab_Waqi_Resume.pdf" class="social__link click" title="Download résumé (PDF)">
+              <i class="fas fa-file-download"></i>
+            </a>
+          </div>
         </div>
       </div>
     </header>
@@ -97,25 +116,29 @@
         <i class="fas fa-envelope"></i>
       </button>
     </a>
-    <a href="#projects" class="scroll">
+    <a href="#services" class="scroll">
       <div class="scroll__icon click"></div>
     </a>
     <div class="modal">
       <div class="modal__half modal__about">
         <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
-        <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer.</h4>
+        <h4 class="modal__sub-title modal__sub-title--about">Frontend Developer &amp; Teacher.</h4>
         <p class="modal__para">
-          Analytical and detail-oriented <b class="orange">Frontend Software Engineer</b> with a background in
-          Information Technology and expertise in mathematical logic and instructional design. Proven track record
-          of building user-centric applications, managing technical deployments, and scaling digital communities
-          to over <b class="orange">80,000+ active followers</b>.
+          I'm a <b class="orange">frontend developer</b> with a background in Information Technology and
+          <b class="orange">7 months of QA testing</b> experience, so I check my work the way a tester would:
+          across screens, browsers, and edge cases.
+        </p>
+        <p class="modal__para">
+          I'm also a classroom teacher. That's where my best projects come from: real problems I see every day,
+          turned into tools people actually use. Outside of code, I've built online communities reaching
+          <b class="orange">80,000+ followers</b>.
         </p>
         <div class="modal__languages">
-        
+
           <figure class="modal__language">
   <img class="modal__language--img"
        src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png"
-       alt="HTML5 Badge">              
+       alt="HTML5 Badge">
   <span class="language__name">HTML</span>
 </figure>
 
@@ -129,7 +152,7 @@
               alt="">
             <span class="language__name">JavaScript</span>
           </figure>
-    
+
           <figure class="modal__language">
             <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
               alt="">
@@ -156,7 +179,8 @@
           Let's have a chat!
         </h3>
         <h3 class="modal__sub-title modal__sub-title--contact">
-          I'm currently open to new opportunities.
+          Have a project in mind? Tell me about it and I'll reply with a quote.
+          I'm also open to part-time frontend roles.
         </h3>
         <form id="contact__form" onsubmit="contact(event)">
           <div class="form__item">
@@ -167,9 +191,32 @@
             <label class="form__item--label">Email</label>
             <input class="input" name="user_email" type="email" required></input>
           </div>
+          <div class="form__row">
+            <div class="form__item">
+              <label class="form__item--label" for="project_type">I'm reaching out about</label>
+              <select class="input" id="project_type" name="project_type">
+                <option>A new website</option>
+                <option>A landing page</option>
+                <option>A website redesign</option>
+                <option>Monthly maintenance</option>
+                <option>A job opportunity</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label" for="budget">Budget (optional)</label>
+              <select class="input" id="budget" name="budget">
+                <option value="">Not sure yet</option>
+                <option>Under PKR 50,000 / $500</option>
+                <option>PKR 50,000–100,000 / $500–1,000</option>
+                <option>PKR 100,000+ / $1,000+</option>
+              </select>
+            </div>
+          </div>
           <div class="form__item">
             <label class="form__item--label">Message</label>
-            <textarea class="input" name="message" type="text" required></textarea>
+            <textarea class="input" name="message" type="text" required
+              placeholder="Tell me about your business and what you need."></textarea>
           </div>
           <button id="contact__submit" class="form__submit">
             Send it my way
@@ -193,11 +240,207 @@
     <img src="./assets/circle.svg" class="shape shape--7">
     <img src="./assets/semi circle.svg" class="shape shape--8">
   </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <h1 class="section__title">
+          What I can <span class="orange">build for you</span>
+        </h1>
+        <div class="service__grid">
+          <div class="service__card">
+            <i class="fas fa-store service__icon"></i>
+            <h3 class="service__name">Business websites</h3>
+            <p class="service__desc">A professional, mobile-friendly site that tells customers who you are,
+              what you offer, and how to reach you.</p>
+          </div>
+          <div class="service__card">
+            <i class="fas fa-bullseye service__icon"></i>
+            <h3 class="service__name">Landing pages</h3>
+            <p class="service__desc">One focused page for a product, event, or campaign, built to turn
+              visitors into customers.</p>
+          </div>
+          <div class="service__card">
+            <i class="fas fa-magic service__icon"></i>
+            <h3 class="service__name">Redesigns</h3>
+            <p class="service__desc">Your old site, made modern, fast, and easy to use on a phone,
+              keeping the content you already have.</p>
+          </div>
+          <div class="service__card">
+            <i class="fas fa-language service__icon"></i>
+            <h3 class="service__name">English &amp; Urdu sites</h3>
+            <p class="service__desc">Bilingual websites that read naturally in both languages, including
+              right-to-left Urdu layouts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="container">
+      <div class="row">
+        <h1 class="section__title">
+          Featured <span class="orange">work</span>
+        </h1>
+        <div class="case__grid">
+          <article class="case">
+            <a href="https://www.teachingpulse.com" target="_blank" class="case__img-wrap">
+              <img src="./assets/teachingpulse mockup.png" class="case__img" alt="TeachingPulse weekly summary screen">
+            </a>
+            <div class="case__body">
+              <span class="case__kicker">Web app</span>
+              <h3 class="case__title">TeachingPulse</h3>
+              <p class="case__para"><b>The problem:</b> Teachers lose hours every week to paperwork and email,
+                but have no data to show where their time actually goes.</p>
+              <p class="case__para"><b>What I built:</b> A tap-to-track time logger with a weekly summary chart
+                and printable reports. Data stays private on the teacher's own device, with no sign-up needed.</p>
+              <p class="case__para"><b>The result:</b> I use it every day in my own classroom.</p>
+              <div class="case__tags">
+                <span class="project__description--tag">Next.js</span>
+                <span class="project__description--tag">TypeScript</span>
+                <span class="project__description--tag">Tailwind</span>
+              </div>
+              <div class="case__links">
+                <a href="https://www.teachingpulse.com" target="_blank" class="case__link"><i class="fas fa-link"></i> Live site</a>
+                <a href="https://github.com/zeevaki/teachingpulse" target="_blank" class="case__link"><i class="fab fa-github"></i> Code</a>
+              </div>
+            </div>
+          </article>
+          <article class="case">
+            <a href="https://ourmathworld.com" target="_blank" class="case__img-wrap">
+              <img src="./assets/ourmathworld mockup.jpg" class="case__img" alt="OurMathWorld home page with English + Spanish and English + Urdu options">
+            </a>
+            <div class="case__body">
+              <span class="case__kicker">Education website · Bilingual</span>
+              <h3 class="case__title">OurMathWorld</h3>
+              <p class="case__para"><b>The problem:</b> Teachers need math resources aligned to Texas standards,
+                and many students learn best with support in their home language.</p>
+              <p class="case__para"><b>What I built:</b> A complete K–5 math resource site with lessons,
+                illustrated word problems, and test prep, in English + Spanish and English + Urdu.</p>
+              <p class="case__para"><b>The result:</b> A large, well-organized site that works for both students and teachers.</p>
+              <div class="case__tags">
+                <span class="project__description--tag">Next.js</span>
+                <span class="project__description--tag">TypeScript</span>
+                <span class="project__description--tag">Urdu / RTL</span>
+              </div>
+              <div class="case__links">
+                <a href="https://ourmathworld.com" target="_blank" class="case__link"><i class="fas fa-link"></i> Live site</a>
+                <a href="https://github.com/zeevaki/ourmathworld" target="_blank" class="case__link"><i class="fab fa-github"></i> Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <div class="row">
+        <h1 class="section__title">
+          Simple <span class="orange">pricing</span>
+        </h1>
+        <div class="currency__toggle" role="group" aria-label="Choose currency">
+          <button class="currency__btn currency__btn--active" data-currency="pkr" onclick="setCurrency('pkr')">Pakistan (PKR)</button>
+          <button class="currency__btn" data-currency="usd" onclick="setCurrency('usd')">International (USD)</button>
+        </div>
+        <div class="price__grid">
+          <div class="price__card">
+            <h3 class="price__name">Landing page</h3>
+            <p class="price__amount">
+              <span class="price__from">Starting at</span>
+              <span data-pkr="PKR 30,000" data-usd="$300">PKR 30,000</span>
+            </p>
+            <ul class="price__list">
+              <li><i class="fas fa-check"></i> One focused page</li>
+              <li><i class="fas fa-check"></i> Mobile-friendly design</li>
+              <li><i class="fas fa-check"></i> Contact or WhatsApp button</li>
+              <li><i class="fas fa-check"></i> Basic Google setup (SEO)</li>
+            </ul>
+          </div>
+          <div class="price__card price__card--featured">
+            <span class="price__badge">Most popular</span>
+            <h3 class="price__name">Business website</h3>
+            <p class="price__amount">
+              <span class="price__from">Starting at</span>
+              <span data-pkr="PKR 65,000" data-usd="$700">PKR 65,000</span>
+            </p>
+            <ul class="price__list">
+              <li><i class="fas fa-check"></i> Up to 5 pages</li>
+              <li><i class="fas fa-check"></i> Mobile-friendly design</li>
+              <li><i class="fas fa-check"></i> Contact form, map &amp; WhatsApp</li>
+              <li><i class="fas fa-check"></i> Basic Google setup (SEO)</li>
+            </ul>
+          </div>
+          <div class="price__card">
+            <h3 class="price__name">Website redesign</h3>
+            <p class="price__amount">
+              <span class="price__from">Starting at</span>
+              <span data-pkr="PKR 45,000" data-usd="$500">PKR 45,000</span>
+            </p>
+            <ul class="price__list">
+              <li><i class="fas fa-check"></i> Modern, fresh look</li>
+              <li><i class="fas fa-check"></i> Faster loading</li>
+              <li><i class="fas fa-check"></i> Works well on phones</li>
+              <li><i class="fas fa-check"></i> Keeps your existing content</li>
+            </ul>
+          </div>
+          <div class="price__card">
+            <h3 class="price__name">Monthly care</h3>
+            <p class="price__amount">
+              <span class="price__from">Starting at</span>
+              <span data-pkr="PKR 8,000/mo" data-usd="$50/mo">PKR 8,000/mo</span>
+            </p>
+            <ul class="price__list">
+              <li><i class="fas fa-check"></i> Text &amp; image updates</li>
+              <li><i class="fas fa-check"></i> Small fixes</li>
+              <li><i class="fas fa-check"></i> Keeping your site running</li>
+            </ul>
+          </div>
+        </div>
+        <p class="price__note">
+          Every project gets its own quote. Domain and hosting are paid separately by the client.
+        </p>
+
+        <h2 class="process__title">How it works</h2>
+        <ol class="process__list">
+          <li class="process__step">
+            <span class="process__num">1</span>
+            <h4>Tell me about your project</h4>
+            <p>Send a message with what you need. No calls required.</p>
+          </li>
+          <li class="process__step">
+            <span class="process__num">2</span>
+            <h4>Get a quote</h4>
+            <p>I reply with a clear price and what's included.</p>
+          </li>
+          <li class="process__step">
+            <span class="process__num">3</span>
+            <h4>50% deposit, then I build</h4>
+            <p>Work starts once the deposit is received.</p>
+          </li>
+          <li class="process__step">
+            <span class="process__num">4</span>
+            <h4>Review &amp; launch</h4>
+            <p>You review the site, pay the remaining 50%, and it goes live.</p>
+          </li>
+        </ol>
+        <div class="process__cta">
+          <a href="#" class="cta cta--primary click" onclick="toggleModal()">
+            <i class="fas fa-paper-plane"></i>
+            Start a project
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="projects">
     <div class="container">
       <div class="row">
         <h1 class="section__title">
-          Here are some of my <span class="orange">projects</span>
+          More <span class="orange">projects</span>
         </h1>
         <div class="category__grid">
           <a href="women.html" class="category__card">
