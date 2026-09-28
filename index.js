@@ -41,20 +41,27 @@ function contact(event) {
   loading.classList += " modal__overlay--visible";
   // Project type and budget are folded into the message so the existing
   // EmailJS template (name, email, message) delivers them without changes.
+  // The sender's email is also repeated at the top of the message, and sent
+  // under the common reply-to variable names, so replies can reach them.
   const form = event.target;
-  const details = [];
+  const name = form.user_name.value.trim();
+  const email = form.user_email.value.trim();
+  const details = [`From: ${name} <${email}>`];
   if (form.project_type) details.push(`Reaching out about: ${form.project_type.value}`);
   if (form.budget && form.budget.value) details.push(`Budget: ${form.budget.value}`);
-  const message = details.length
-    ? `${details.join("\n")}\n\n${form.message.value}`
-    : form.message.value;
+  const message = `${details.join("\n")}\n\n${form.message.value}`;
   emailjs
     .send(
       "service_qxdnyg4",
       "template_zkdk6zl",
       {
-        user_name: form.user_name.value,
-        user_email: form.user_email.value,
+        user_name: name,
+        from_name: name,
+        name,
+        user_email: email,
+        reply_to: email,
+        email,
+        from_email: email,
         message,
       },
       "URaLON_8OTzDkIS1D"
