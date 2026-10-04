@@ -34,6 +34,18 @@ function setCurrency(currency) {
   });
 }
 
+// In the contact popup, website projects are sent to the full project form
+// (start.html) instead of a free-text message, so every lead arrives with details.
+function updateContactType() {
+  const select = document.getElementById("project_type");
+  if (!select) return;
+  const isProject = select.selectedOptions[0].hasAttribute("data-project");
+  document.querySelector(".contact__redirect").hidden = !isProject;
+  document.querySelector(".contact__message").hidden = isProject;
+}
+
+document.addEventListener("DOMContentLoaded", updateContactType);
+
 function contact(event) {
   event.preventDefault();
   const loading = document.querySelector(".modal__overlay--loading");

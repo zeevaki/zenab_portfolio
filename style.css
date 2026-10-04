@@ -1759,3 +1759,22 @@ textarea::placeholder {
     border-radius: 12px;
   }
 }
+
+/* ── CONTACT POPUP: website projects go to start.html ── */
+
+.contact__redirect--text {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.contact__redirect--btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: none;
+  width: auto;
+  font-size: 18px;
+}

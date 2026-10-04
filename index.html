@@ -90,7 +90,7 @@
           <div class="header__ctas">
             <a href="start.html" class="cta cta--primary">
               <i class="fas fa-paper-plane"></i>
-              Start a project
+              Describe your website
             </a>
             <a href="./resume.html" target="_blank" class="resume__cta">
               <i class="fas fa-file-alt"></i>
@@ -179,48 +179,47 @@
           Let's have a chat!
         </h3>
         <h3 class="modal__sub-title modal__sub-title--contact">
-          Have a website project in mind? <a href="start.html" class="orange">Fill out the 3-minute project form</a> so I can send an accurate quote.
+          Planning a website? Pick it below and I'll take you to a short project form.
           I'm also open to part-time frontend roles.
         </h3>
         <form id="contact__form" onsubmit="contact(event)">
           <div class="form__item">
-            <label class="form__item--label">Name</label>
-            <input class="input" name="user_name" type="text" required></input>
+            <label class="form__item--label" for="project_type">I'm reaching out about</label>
+            <select class="input" id="project_type" name="project_type" onchange="updateContactType()">
+              <option data-project>A new website</option>
+              <option data-project>A landing page</option>
+              <option data-project>A website redesign</option>
+              <option>Monthly maintenance</option>
+              <option>A job opportunity</option>
+              <option>Something else</option>
+            </select>
           </div>
-          <div class="form__item">
-            <label class="form__item--label">Email</label>
-            <input class="input" name="user_email" type="email" required></input>
+          <div class="contact__redirect">
+            <p class="contact__redirect--text">
+              For website projects, a short form tells me everything I need to send you an accurate quote.
+            </p>
+            <a href="start.html" class="form__submit contact__redirect--btn">
+              Continue to the project form <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-          <div class="form__row">
+          <div class="contact__message" hidden>
             <div class="form__item">
-              <label class="form__item--label" for="project_type">I'm reaching out about</label>
-              <select class="input" id="project_type" name="project_type">
-                <option>A new website</option>
-                <option>A landing page</option>
-                <option>A website redesign</option>
-                <option>Monthly maintenance</option>
-                <option>A job opportunity</option>
-                <option>Something else</option>
-              </select>
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" required></input>
             </div>
             <div class="form__item">
-              <label class="form__item--label" for="budget">Budget (optional)</label>
-              <select class="input" id="budget" name="budget">
-                <option value="">Not sure yet</option>
-                <option>Under PKR 50,000 / $500</option>
-                <option>PKR 50,000–100,000 / $500–1,000</option>
-                <option>PKR 100,000+ / $1,000+</option>
-              </select>
+              <label class="form__item--label">Email</label>
+              <input class="input" name="user_email" type="email" required></input>
             </div>
+            <div class="form__item">
+              <label class="form__item--label" for="contact_message">Message</label>
+              <textarea class="input" id="contact_message" name="message" type="text" required
+                placeholder="How can I help?"></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">
+              Send it my way
+            </button>
           </div>
-          <div class="form__item">
-            <label class="form__item--label">Message</label>
-            <textarea class="input" name="message" type="text" required
-              placeholder="Tell me about your business and what you need."></textarea>
-          </div>
-          <button id="contact__submit" class="form__submit">
-            Send it my way
-          </button>
         </form>
         <div class="modal__overlay modal__overlay--loading">
           <i class="fas fa-spinner"></i>
@@ -429,7 +428,7 @@
         <div class="process__cta">
           <a href="start.html" class="cta cta--primary">
             <i class="fas fa-paper-plane"></i>
-            Start a project
+            Describe your website
           </a>
         </div>
       </div>
