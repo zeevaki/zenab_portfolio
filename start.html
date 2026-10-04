@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start a Project – Zenab Waqi</title>
+  <meta name="description" content="Tell Zenab Waqi about your business and website project. A 3-minute form to get an accurate quote.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="/assets/gemini-svg.svg" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){ emailjs.init({ publicKey: "URaLON_8OTzDkIS1D" }); })();
+  </script>
+</head>
+<body>
+  <nav class="cat-nav">
+    <figure>
+      <a href="index.html"><img id="personal-logo" src="./assets/profile.jpg" alt="Zenab Waqi"></a>
+    </figure>
+    <ul class="nav__link--list">
+      <li class="nav__link">
+        <a href="index.html#services" class="nav__link--anchor link__hover-effect link__hover-effect--black">Services</a>
+      </li>
+      <li class="nav__link">
+        <a href="index.html#pricing" class="nav__link--anchor link__hover-effect link__hover-effect--black">Pricing</a>
+      </li>
+      <li class="nav__link click" onclick="toggleContrast()">
+        <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black"><i class="fas fa-adjust"></i></a>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="cat-section">
+    <div class="container">
+      <div class="row">
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
+        <h1 class="section__title brief__title">Start a <span class="orange">project</span></h1>
+        <p class="brief__intro">
+          Tell me about your business and what you need. It takes about 3 minutes, and it helps me
+          send you an accurate quote instead of a guess. I reply within 2 business days.
+        </p>
+
+        <div class="brief">
+          <form id="brief__form" onsubmit="startProject(event)">
+
+            <fieldset class="brief__group">
+              <legend class="brief__legend"><span class="orange">1.</span> About you</legend>
+              <div class="form__row">
+                <div class="form__item">
+                  <label class="form__item--label" for="brief_name">Your name *</label>
+                  <input class="input" id="brief_name" name="user_name" type="text" required>
+                </div>
+                <div class="form__item">
+                  <label class="form__item--label" for="brief_email">Email *</label>
+                  <input class="input" id="brief_email" name="user_email" type="email" required>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__item">
+                  <label class="form__item--label" for="brief_whatsapp">WhatsApp number (optional)</label>
+                  <input class="input" id="brief_whatsapp" name="whatsapp" type="tel" placeholder="+92 300 1234567">
+                </div>
+                <div class="form__item">
+                  <span class="form__item--label">Best way to reach you</span>
+                  <div class="brief__options">
+                    <label class="brief__option"><input type="radio" name="contact_pref" value="Email" checked><span>Email</span></label>
+                    <label class="brief__option"><input type="radio" name="contact_pref" value="WhatsApp"><span>WhatsApp</span></label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="brief__group">
+              <legend class="brief__legend"><span class="orange">2.</span> Your business</legend>
+              <div class="form__item">
+                <label class="form__item--label" for="brief_business">Business name *</label>
+                <input class="input" id="brief_business" name="business_name" type="text" required>
+              </div>
+              <div class="form__item">
+                <label class="form__item--label" for="brief_about">What does your business do? *</label>
+                <textarea class="input" id="brief_about" name="business_about" required
+                  placeholder="One or two sentences, e.g. &quot;We're a family bakery in Lahore selling cakes for weddings and events.&quot;"></textarea>
+              </div>
+              <div class="form__item">
+                <span class="form__item--label">Where are most of your customers?</span>
+                <div class="brief__options">
+                  <label class="brief__option"><input type="radio" name="customers" value="Pakistan"><span>Pakistan</span></label>
+                  <label class="brief__option"><input type="radio" name="customers" value="USA"><span>USA</span></label>
+                  <label class="brief__option"><input type="radio" name="customers" value="UK / Europe"><span>UK / Europe</span></label>
+                  <label class="brief__option"><input type="radio" name="customers" value="Middle East"><span>Middle East</span></label>
+                  <label class="brief__option"><input type="radio" name="customers" value="Other / Worldwide"><span>Other / Worldwide</span></label>
+                </div>
+              </div>
+              <div class="form__item">
+                <label class="form__item--label" for="brief_current">Current website or social media page (optional)</label>
+                <input class="input" id="brief_current" name="current_site" type="text" placeholder="Link, or leave blank if you don't have one">
+              </div>
+            </fieldset>
+
+            <fieldset class="brief__group">
+              <legend class="brief__legend"><span class="orange">3.</span> What you need</legend>
+              <div class="form__item">
+                <span class="form__item--label">What kind of website? *</span>
+                <div class="brief__options">
+                  <label class="brief__option"><input type="radio" name="site_type" value="Business website" required><span>Business website</span></label>
+                  <label class="brief__option"><input type="radio" name="site_type" value="Online store"><span>Online store</span></label>
+                  <label class="brief__option"><input type="radio" name="site_type" value="Landing page"><span>Landing page</span></label>
+                  <label class="brief__option"><input type="radio" name="site_type" value="Portfolio"><span>Portfolio</span></label>
+                  <label class="brief__option"><input type="radio" name="site_type" value="Redesign of my current site"><span>Redesign my current site</span></label>
+                  <label class="brief__option"><input type="radio" name="site_type" value="Not sure"><span>Not sure</span></label>
+                </div>
+              </div>
+              <div class="form__item">
+                <span class="form__item--label">About how many pages? *</span>
+                <div class="brief__options">
+                  <label class="brief__option"><input type="radio" name="pages" value="1 page" required><span>1</span></label>
+                  <label class="brief__option"><input type="radio" name="pages" value="2-5 pages"><span>2–5</span></label>
+                  <label class="brief__option"><input type="radio" name="pages" value="6-10 pages"><span>6–10</span></label>
+                  <label class="brief__option"><input type="radio" name="pages" value="More than 10 pages"><span>10+</span></label>
+                  <label class="brief__option"><input type="radio" name="pages" value="Not sure"><span>Not sure</span></label>
+                </div>
+              </div>
+              <div class="form__item">
+                <span class="form__item--label">Which features do you need? (choose any)</span>
+                <div class="brief__options">
+                  <label class="brief__option"><input type="checkbox" name="features" value="Contact form"><span>Contact form</span></label>
+                  <label class="brief__option"><input type="checkbox" name="features" value="WhatsApp button"><span>WhatsApp button</span></label>
+                  <label class="brief__option"><input type="checkbox" name="features" value="Menu / price list"><span>Menu / price list</span></label>
+                  <label class="brief__option"><input type="checkbox" name="features" value="Photo gallery"><span>Photo gallery</span></label>
+                  <label class="brief__option"><input type="checkbox" name="features" value="Booking / appointments"><span>Booking / appointments</span></label>
+                  <label class="brief__option"><input type="checkbox" name="features" value="Online payments"><span>Online payments</span></label>
+                  <label class="brief__option"><input type="checkbox" name="features" value="Google Maps location"><span>Google Maps location</span></label>
+                  <label class="brief__option"><input type="checkbox" name="features" value="Urdu + English"><span>Urdu + English</span></label>
+                  <label class="brief__option"><input type="checkbox" name="features" value="Blog / news"><span>Blog / news</span></label>
+                </div>
+              </div>
+              <div class="form__item">
+                <span class="form__item--label">Do you have a logo, photos, and text ready?</span>
+                <div class="brief__options">
+                  <label class="brief__option"><input type="radio" name="content_ready" value="Yes, all ready"><span>Yes, all ready</span></label>
+                  <label class="brief__option"><input type="radio" name="content_ready" value="Some of it"><span>Some of it</span></label>
+                  <label class="brief__option"><input type="radio" name="content_ready" value="No, I need help"><span>No, I need help</span></label>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="brief__group">
+              <legend class="brief__legend"><span class="orange">4.</span> Style, budget &amp; timing</legend>
+              <div class="form__item">
+                <label class="form__item--label" for="brief_likes">2–3 websites you like (optional)</label>
+                <textarea class="input" id="brief_likes" name="sites_liked"
+                  placeholder="Paste links, and tell me what you like about them if you can."></textarea>
+              </div>
+              <div class="form__row">
+                <div class="form__item">
+                  <label class="form__item--label" for="brief_budget">Budget</label>
+                  <select class="input" id="brief_budget" name="budget">
+                    <option value="">Not sure yet</option>
+                    <option>Under PKR 50,000 / $500</option>
+                    <option>PKR 50,000–100,000 / $500–1,000</option>
+                    <option>PKR 100,000+ / $1,000+</option>
+                  </select>
+                </div>
+                <div class="form__item">
+                  <label class="form__item--label" for="brief_timeline">When do you need it?</label>
+                  <select class="input" id="brief_timeline" name="timeline">
+                    <option value="">Flexible</option>
+                    <option>As soon as possible</option>
+                    <option>Within 1 month</option>
+                    <option>In 2–3 months</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form__item">
+                <label class="form__item--label" for="brief_notes">Anything else I should know? (optional)</label>
+                <textarea class="input" id="brief_notes" name="notes"></textarea>
+              </div>
+            </fieldset>
+
+            <button id="brief__submit" class="form__submit">Send project details</button>
+            <p class="brief__note">I'll review your answers and reply with a quote. Work starts once the deposit is received.</p>
+          </form>
+
+          <div class="brief__done" hidden>
+            <i class="fas fa-check-circle brief__done--icon"></i>
+            <h2>Thank you! Your project details are on their way.</h2>
+            <p>I'll review them and reply within 2 business days with next steps and a quote.</p>
+            <a href="index.html#work" class="cta cta--primary">See my work while you wait</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row footer__row">
+        <a href="index.html" class="footer__anchor">
+          <figure class="footer__logo">
+            <img src="./assets/profile.jpg" class="footer__logo--img" alt="Zenab Waqi">
+          </figure>
+          <span class="footer__logo--popper">Home <i class="fas fa-arrow-up"></i></span>
+        </a>
+        <div class="footer__social--list">
+          <a href="https://www.linkedin.com/in/zenab-waqi" target="_blank" class="footer__social--link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/zeevaki" target="_blank" class="footer__social--link" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.facebook.com/zenab.waqi" target="_blank" class="footer__social--link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/zenab_waqi/" target="_blank" class="footer__social--link" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="./resume.html" target="_blank" class="footer__social--link" title="Resume"><i class="fas fa-file-pdf"></i></a>
+        </div>
+        <div class="footer__copyright">Copyright &copy; 2026 Zenab Waqi</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

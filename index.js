@@ -78,6 +78,76 @@ function contact(event) {
     });
 }
 
+// Project questionnaire on start.html. Every answer is folded into one
+// message, so it goes through the same EmailJS template as the contact form.
+function startProject(event) {
+  event.preventDefault();
+  const form = event.target;
+  const button = document.getElementById("brief__submit");
+  const field = (name) => (form[name] ? form[name].value.trim() : "");
+  const picked = (name) =>
+    [...form.querySelectorAll(`input[name="${name}"]:checked`)].map((el) => el.value).join(", ");
+
+  const name = field("user_name");
+  const email = field("user_email");
+  const lines = [
+    ["From", `${name} <${email}>`],
+    ["WhatsApp", field("whatsapp")],
+    ["Prefers contact by", picked("contact_pref")],
+    ["", ""],
+    ["Business", field("business_name")],
+    ["What they do", field("business_about")],
+    ["Customers in", picked("customers")],
+    ["Current site / page", field("current_site")],
+    ["", ""],
+    ["Website type", picked("site_type")],
+    ["Pages", picked("pages")],
+    ["Features", picked("features")],
+    ["Logo/photos/text ready", picked("content_ready")],
+    ["", ""],
+    ["Sites they like", field("sites_liked")],
+    ["Budget", field("budget") || "Not sure yet"],
+    ["Timeline", field("timeline") || "Flexible"],
+    ["Notes", field("notes")],
+  ];
+  const message =
+    "NEW PROJECT REQUEST (zenab.dev/start)\n\n" +
+    lines
+      .filter(([label, value]) => !label || value)
+      .map(([label, value]) => (label ? `${label}: ${value}` : ""))
+      .join("\n");
+
+  button.disabled = true;
+  button.textContent = "Sending...";
+  emailjs
+    .send(
+      "service_qxdnyg4",
+      "template_zkdk6zl",
+      {
+        user_name: name,
+        from_name: name,
+        name,
+        user_email: email,
+        reply_to: email,
+        email,
+        from_email: email,
+        message,
+      },
+      "URaLON_8OTzDkIS1D"
+    )
+    .then(() => {
+      form.hidden = true;
+      document.querySelector(".brief__done").hidden = false;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    })
+    .catch(() => {
+      button.disabled = false;
+      button.textContent = "Send project details";
+      alert(
+        "The email service is temporarily unavailable. Please contact me directly on zeevaki@gmail.com"
+      );
+    });
+}
 
 function toggleModal() {
   if (isModalOpen) {
