@@ -1778,3 +1778,51 @@ textarea::placeholder {
   width: auto;
   font-size: 18px;
 }
+
+.brief__hint {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #aaa;
+  margin: 4px 0 6px;
+}
+
+.brief__terms {
+  background-color: #2f2f2f;
+  border-left: 3px solid #f06449;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.brief__terms p + p {
+  margin-top: 10px;
+}
+
+.brief__agree {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.brief__agree input {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: #f06449;
+}
+
+.brief__error {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background-color: rgba(240, 100, 73, 0.15);
+  border: 1px solid #f06449;
+  color: #ffd2c9;
+  font-size: 14px;
+}

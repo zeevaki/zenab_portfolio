@@ -38,10 +38,12 @@
     <div class="container">
       <div class="row">
         <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
-        <h1 class="section__title brief__title">Start a <span class="orange">project</span></h1>
+        <h1 class="section__title brief__title">Describe your <span class="orange">website</span></h1>
         <p class="brief__intro">
-          Tell me about your business and what you need. It takes about 3 minutes, and it helps me
-          send you an accurate quote instead of a guess. I reply within 2 business days.
+          These questions help me understand your business and send you an accurate quote
+          instead of a guess. It takes about 5 minutes. There are no wrong answers: if you're
+          unsure about something, choose <b>"Not sure"</b> and I'll help you decide.
+          I reply within 2 business days.
         </p>
 
         <div class="brief">
@@ -81,14 +83,15 @@
                 <input class="input" id="brief_business" name="business_name" type="text" required>
               </div>
               <div class="form__item">
-                <label class="form__item--label" for="brief_about">What does your business do? *</label>
-                <textarea class="input" id="brief_about" name="business_about" required
-                  placeholder="One or two sentences, e.g. &quot;We're a family bakery in Lahore selling cakes for weddings and events.&quot;"></textarea>
+                <label class="form__item--label" for="brief_about">What does your business do, and who do you serve? *</label>
+                <p class="brief__hint">A sentence or two is perfect. Example: "We sell handmade jewelry to women in Lahore and ship across Pakistan."</p>
+                <textarea class="input" id="brief_about" name="business_about" required minlength="30"
+                  data-short-msg="Please add a little more detail (at least one full sentence) so I can understand your business."></textarea>
               </div>
               <div class="form__item">
-                <span class="form__item--label">Where are most of your customers?</span>
+                <span class="form__item--label">Where are most of your customers? *</span>
                 <div class="brief__options">
-                  <label class="brief__option"><input type="radio" name="customers" value="Pakistan"><span>Pakistan</span></label>
+                  <label class="brief__option"><input type="radio" name="customers" value="Pakistan" required><span>Pakistan</span></label>
                   <label class="brief__option"><input type="radio" name="customers" value="USA"><span>USA</span></label>
                   <label class="brief__option"><input type="radio" name="customers" value="UK / Europe"><span>UK / Europe</span></label>
                   <label class="brief__option"><input type="radio" name="customers" value="Middle East"><span>Middle East</span></label>
@@ -102,7 +105,30 @@
             </fieldset>
 
             <fieldset class="brief__group">
-              <legend class="brief__legend"><span class="orange">3.</span> What you need</legend>
+              <legend class="brief__legend"><span class="orange">3.</span> Your goals</legend>
+              <div class="form__item">
+                <span class="form__item--label">What is the #1 thing your website should do? *</span>
+                <div class="brief__options">
+                  <label class="brief__option"><input type="radio" name="goal" value="Get more inquiries (WhatsApp, calls, messages)" required><span>Get more inquiries</span></label>
+                  <label class="brief__option"><input type="radio" name="goal" value="Show my products or services"><span>Show my products or services</span></label>
+                  <label class="brief__option"><input type="radio" name="goal" value="Build trust and look professional"><span>Build trust and look professional</span></label>
+                  <label class="brief__option"><input type="radio" name="goal" value="Sell online"><span>Sell online</span></label>
+                  <label class="brief__option"><input type="radio" name="goal" value="Not sure, wants advice"><span>Not sure, I'd like your advice</span></label>
+                </div>
+              </div>
+              <div class="form__item">
+                <span class="form__item--label">Which language(s) should the website be in? *</span>
+                <div class="brief__options" data-required-group="languages">
+                  <label class="brief__option"><input type="checkbox" name="languages" value="English"><span>English</span></label>
+                  <label class="brief__option"><input type="checkbox" name="languages" value="Urdu"><span>Urdu</span></label>
+                  <label class="brief__option"><input type="checkbox" name="languages" value="Arabic"><span>Arabic</span></label>
+                  <label class="brief__option"><input type="checkbox" name="languages" value="Other language"><span>Other</span></label>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="brief__group">
+              <legend class="brief__legend"><span class="orange">4.</span> What you need</legend>
               <div class="form__item">
                 <span class="form__item--label">What kind of website? *</span>
                 <div class="brief__options">
@@ -115,13 +141,26 @@
                 </div>
               </div>
               <div class="form__item">
-                <span class="form__item--label">About how many pages? *</span>
+                <label class="form__item--label" for="brief_pages">Which pages do you need? *</label>
+                <p class="brief__hint">Example: Home, About, Services, Gallery, Contact. If you're not sure, write "Please suggest."</p>
+                <input class="input" id="brief_pages" name="pages_list" type="text" required minlength="4"
+                  data-short-msg="Please list the pages you need, or write &quot;Please suggest.&quot;">
+              </div>
+              <div class="form__item">
+                <span class="form__item--label">How many products or services will you show? *</span>
                 <div class="brief__options">
-                  <label class="brief__option"><input type="radio" name="pages" value="1 page" required><span>1</span></label>
-                  <label class="brief__option"><input type="radio" name="pages" value="2-5 pages"><span>2–5</span></label>
-                  <label class="brief__option"><input type="radio" name="pages" value="6-10 pages"><span>6–10</span></label>
-                  <label class="brief__option"><input type="radio" name="pages" value="More than 10 pages"><span>10+</span></label>
-                  <label class="brief__option"><input type="radio" name="pages" value="Not sure"><span>Not sure</span></label>
+                  <label class="brief__option"><input type="radio" name="product_count" value="1-10" required><span>1–10</span></label>
+                  <label class="brief__option"><input type="radio" name="product_count" value="11-50"><span>11–50</span></label>
+                  <label class="brief__option"><input type="radio" name="product_count" value="More than 50"><span>50+</span></label>
+                  <label class="brief__option"><input type="radio" name="product_count" value="None, just information"><span>None, just information</span></label>
+                </div>
+              </div>
+              <div class="form__item">
+                <span class="form__item--label">Should prices be shown on the website? *</span>
+                <div class="brief__options">
+                  <label class="brief__option"><input type="radio" name="prices" value="Show prices" required><span>Yes, show prices</span></label>
+                  <label class="brief__option"><input type="radio" name="prices" value="Visitors request a quote"><span>No, visitors request a quote</span></label>
+                  <label class="brief__option"><input type="radio" name="prices" value="Not sure"><span>Not sure</span></label>
                 </div>
               </div>
               <div class="form__item">
@@ -134,44 +173,54 @@
                   <label class="brief__option"><input type="checkbox" name="features" value="Booking / appointments"><span>Booking / appointments</span></label>
                   <label class="brief__option"><input type="checkbox" name="features" value="Online payments"><span>Online payments</span></label>
                   <label class="brief__option"><input type="checkbox" name="features" value="Google Maps location"><span>Google Maps location</span></label>
-                  <label class="brief__option"><input type="checkbox" name="features" value="Urdu + English"><span>Urdu + English</span></label>
                   <label class="brief__option"><input type="checkbox" name="features" value="Blog / news"><span>Blog / news</span></label>
                 </div>
               </div>
               <div class="form__item">
-                <span class="form__item--label">Do you have a logo, photos, and text ready?</span>
+                <span class="form__item--label">Do you have a logo, photos, and text ready? *</span>
                 <div class="brief__options">
-                  <label class="brief__option"><input type="radio" name="content_ready" value="Yes, all ready"><span>Yes, all ready</span></label>
+                  <label class="brief__option"><input type="radio" name="content_ready" value="Yes, all ready" required><span>Yes, all ready</span></label>
                   <label class="brief__option"><input type="radio" name="content_ready" value="Some of it"><span>Some of it</span></label>
-                  <label class="brief__option"><input type="radio" name="content_ready" value="No, I need help"><span>No, I need help</span></label>
+                  <label class="brief__option"><input type="radio" name="content_ready" value="No, needs help"><span>No, I need help</span></label>
+                </div>
+              </div>
+              <div class="form__item">
+                <span class="form__item--label">Do you own a domain name (like yourbusiness.com)? *</span>
+                <div class="brief__options">
+                  <label class="brief__option"><input type="radio" name="domain" value="Yes, owns a domain" required><span>Yes, I own one</span></label>
+                  <label class="brief__option"><input type="radio" name="domain" value="No, needs help buying one"><span>No, I'll need help buying one</span></label>
+                  <label class="brief__option"><input type="radio" name="domain" value="Not sure"><span>Not sure</span></label>
                 </div>
               </div>
             </fieldset>
 
             <fieldset class="brief__group">
-              <legend class="brief__legend"><span class="orange">4.</span> Style, budget &amp; timing</legend>
+              <legend class="brief__legend"><span class="orange">5.</span> Style, budget &amp; timing</legend>
               <div class="form__item">
-                <label class="form__item--label" for="brief_likes">2–3 websites you like (optional)</label>
-                <textarea class="input" id="brief_likes" name="sites_liked"
-                  placeholder="Paste links, and tell me what you like about them if you can."></textarea>
+                <label class="form__item--label" for="brief_likes">Websites you like, and why *</label>
+                <p class="brief__hint">Any 1–3 websites, even from other industries. Example: "apple.com, I like the clean look and big photos." If none come to mind, describe the feel you want: simple, colorful, elegant, modern...</p>
+                <textarea class="input" id="brief_likes" name="sites_liked" required minlength="15"
+                  data-short-msg="Please share a website you like, or describe the style you want in a few words."></textarea>
               </div>
               <div class="form__row">
                 <div class="form__item">
-                  <label class="form__item--label" for="brief_budget">Budget</label>
-                  <select class="input" id="brief_budget" name="budget">
-                    <option value="">Not sure yet</option>
+                  <label class="form__item--label" for="brief_budget">Budget *</label>
+                  <select class="input" id="brief_budget" name="budget" required>
+                    <option value="" disabled selected>Choose one</option>
                     <option>Under PKR 50,000 / $500</option>
                     <option>PKR 50,000–100,000 / $500–1,000</option>
                     <option>PKR 100,000+ / $1,000+</option>
+                    <option>Not sure, please recommend a package</option>
                   </select>
                 </div>
                 <div class="form__item">
-                  <label class="form__item--label" for="brief_timeline">When do you need it?</label>
-                  <select class="input" id="brief_timeline" name="timeline">
-                    <option value="">Flexible</option>
+                  <label class="form__item--label" for="brief_timeline">When do you need it? *</label>
+                  <select class="input" id="brief_timeline" name="timeline" required>
+                    <option value="" disabled selected>Choose one</option>
                     <option>As soon as possible</option>
                     <option>Within 1 month</option>
                     <option>In 2–3 months</option>
+                    <option>Flexible</option>
                   </select>
                 </div>
               </div>
@@ -181,8 +230,37 @@
               </div>
             </fieldset>
 
+            <fieldset class="brief__group">
+              <legend class="brief__legend"><span class="orange">6.</span> Payment &amp; next steps</legend>
+              <div class="brief__terms">
+                <p><i class="fas fa-file-invoice-dollar orange"></i> <b>50% deposit</b> to start, and the remaining 50% before your website goes live. Payment details are sent with your quote.</p>
+                <p><i class="fas fa-video orange"></i> <b>Prefer a video call?</b> I offer a 30-minute consultation for <b>$30 / PKR 5,000</b>, paid in advance and fully credited toward your project.</p>
+              </div>
+              <div class="form__item">
+                <span class="form__item--label">Which payment method works best for you? *</span>
+                <div class="brief__options">
+                  <label class="brief__option"><input type="radio" name="payment_method" value="International bank transfer" required><span>Bank transfer</span></label>
+                  <label class="brief__option"><input type="radio" name="payment_method" value="Wise"><span>Wise</span></label>
+                  <label class="brief__option"><input type="radio" name="payment_method" value="PayPal"><span>PayPal</span></label>
+                  <label class="brief__option"><input type="radio" name="payment_method" value="Other / not sure"><span>Other / not sure</span></label>
+                </div>
+              </div>
+              <div class="form__item">
+                <span class="form__item--label">Would you like a paid video consultation before the quote?</span>
+                <div class="brief__options">
+                  <label class="brief__option"><input type="radio" name="consultation" value="No, email is fine" checked><span>No, email is fine</span></label>
+                  <label class="brief__option"><input type="radio" name="consultation" value="Yes, wants a paid consultation"><span>Yes, I'd like a consultation</span></label>
+                </div>
+              </div>
+              <label class="brief__agree">
+                <input type="checkbox" name="agree_deposit" value="Yes" required>
+                <span>I understand that work begins after a 50% deposit is received. *</span>
+              </label>
+            </fieldset>
+
+            <p class="brief__error" role="alert" hidden></p>
             <button id="brief__submit" class="form__submit">Send project details</button>
-            <p class="brief__note">I'll review your answers and reply with a quote. Work starts once the deposit is received.</p>
+            <p class="brief__note">Your answers are only used to prepare your quote. I'll reply within 2 business days.</p>
           </form>
 
           <div class="brief__done" hidden>

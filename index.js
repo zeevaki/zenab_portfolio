@@ -100,6 +100,27 @@ function startProject(event) {
   const picked = (name) =>
     [...form.querySelectorAll(`input[name="${name}"]:checked`)].map((el) => el.value).join(", ");
 
+  // Checks the browser can't do on its own: at least one language picked,
+  // and written answers that aren't just spaces.
+  const error = document.querySelector(".brief__error");
+  const problem = (message, target) => {
+    error.textContent = message;
+    error.hidden = false;
+    (target.closest(".form__item") || target).appendChild(error);
+    target.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+  const languages = form.querySelector('[data-required-group="languages"]');
+  if (!picked("languages")) {
+    return problem("Please choose at least one language for your website.", languages);
+  }
+  for (const el of form.querySelectorAll("[data-short-msg]")) {
+    if (el.value.trim().length < Number(el.getAttribute("minlength"))) {
+      el.focus();
+      return problem(el.dataset.shortMsg, el);
+    }
+  }
+  error.hidden = true;
+
   const name = field("user_name");
   const email = field("user_email");
   const lines = [
@@ -112,15 +133,25 @@ function startProject(event) {
     ["Customers in", picked("customers")],
     ["Current site / page", field("current_site")],
     ["", ""],
+    ["Main goal", picked("goal")],
+    ["Languages", picked("languages")],
+    ["", ""],
     ["Website type", picked("site_type")],
-    ["Pages", picked("pages")],
+    ["Pages", field("pages_list")],
+    ["Products/services shown", picked("product_count")],
+    ["Prices", picked("prices")],
     ["Features", picked("features")],
     ["Logo/photos/text ready", picked("content_ready")],
+    ["Domain", picked("domain")],
     ["", ""],
     ["Sites they like", field("sites_liked")],
-    ["Budget", field("budget") || "Not sure yet"],
-    ["Timeline", field("timeline") || "Flexible"],
+    ["Budget", field("budget")],
+    ["Timeline", field("timeline")],
     ["Notes", field("notes")],
+    ["", ""],
+    ["Payment method", picked("payment_method")],
+    ["Video consultation", picked("consultation")],
+    ["Agreed to 50% deposit", picked("agree_deposit")],
   ];
   const message =
     "NEW PROJECT REQUEST (zenab.dev/start)\n\n" +
@@ -160,6 +191,23 @@ function startProject(event) {
       );
     });
 }
+
+// Swap the browser's "lengthen this text to N characters" warning for a friendlier one.
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-short-msg]").forEach((el) => {
+    el.addEventListener("invalid", () => {
+      if (el.validity.tooShort) el.setCustomValidity(el.dataset.shortMsg);
+    });
+    el.addEventListener("input", () => el.setCustomValidity(""));
+  });
+  // Hide the project form's error message as soon as the client edits anything.
+  const brief = document.getElementById("brief__form");
+  if (brief) {
+    brief.addEventListener("input", () => {
+      brief.querySelector(".brief__error").hidden = true;
+    });
+  }
+});
 
 function toggleModal() {
   if (isModalOpen) {
