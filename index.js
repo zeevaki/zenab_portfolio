@@ -85,7 +85,7 @@ function contact(event) {
     .catch(() => {
       loading.classList.remove("modal__overlay--visible");
       alert(
-        "The email service is temporarily unavailable. Please contact me directly on zeevaki@gmail.com"
+        "The email service is temporarily unavailable. Please contact me directly at hello@zenab.dev"
       );
     });
 }
@@ -187,7 +187,7 @@ function startProject(event) {
       button.disabled = false;
       button.textContent = "Send project details";
       alert(
-        "The email service is temporarily unavailable. Please contact me directly on zeevaki@gmail.com"
+        "The email service is temporarily unavailable. Please contact me directly at hello@zenab.dev"
       );
     });
 }
