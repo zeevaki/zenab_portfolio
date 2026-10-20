@@ -25,15 +25,6 @@ function toggleContrast() {
   }
 }
 
-function setCurrency(currency) {
-  document.querySelectorAll("[data-pkr]").forEach((el) => {
-    el.textContent = el.dataset[currency];
-  });
-  document.querySelectorAll(".currency__btn").forEach((btn) => {
-    btn.classList.toggle("currency__btn--active", btn.dataset.currency === currency);
-  });
-}
-
 // In the contact popup, website projects are sent to the full project form
 // (start.html) instead of a free-text message, so every lead arrives with details.
 function updateContactType() {
