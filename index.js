@@ -91,8 +91,7 @@ function startProject(event) {
   const picked = (name) =>
     [...form.querySelectorAll(`input[name="${name}"]:checked`)].map((el) => el.value).join(", ");
 
-  // Checks the browser can't do on its own: at least one language picked,
-  // and written answers that aren't just spaces.
+  // Check the browser can't do on its own: written answers that aren't just spaces.
   const error = document.querySelector(".brief__error");
   const problem = (message, target) => {
     error.textContent = message;
@@ -100,10 +99,6 @@ function startProject(event) {
     (target.closest(".form__item") || target).appendChild(error);
     target.scrollIntoView({ behavior: "smooth", block: "center" });
   };
-  const languages = form.querySelector('[data-required-group="languages"]');
-  if (!picked("languages")) {
-    return problem("Please choose at least one language for your website.", languages);
-  }
   for (const el of form.querySelectorAll("[data-short-msg]")) {
     if (el.value.trim().length < Number(el.getAttribute("minlength"))) {
       el.focus();
@@ -116,32 +111,13 @@ function startProject(event) {
   const email = field("user_email");
   const lines = [
     ["From", `${name} <${email}>`],
-    ["WhatsApp", field("whatsapp")],
-    ["Prefers contact by", picked("contact_pref")],
-    ["", ""],
+    ["Phone", field("phone")],
     ["Business", field("business_name")],
-    ["What they do", field("business_about")],
-    ["Customers in", picked("customers")],
     ["Current site / page", field("current_site")],
     ["", ""],
-    ["Main goal", picked("goal")],
-    ["Languages", picked("languages")],
-    ["", ""],
-    ["Website type", picked("site_type")],
-    ["Pages", field("pages_list")],
-    ["Products/services shown", picked("product_count")],
-    ["Prices", picked("prices")],
-    ["Features", picked("features")],
-    ["Logo/photos/text ready", picked("content_ready")],
-    ["Domain", picked("domain")],
-    ["", ""],
-    ["Sites they like", field("sites_liked")],
-    ["Budget", field("budget")],
+    ["Needs", picked("site_type")],
+    ["About the project", field("business_about")],
     ["Timeline", field("timeline")],
-    ["Notes", field("notes")],
-    ["", ""],
-    ["Payment method", picked("payment_method")],
-    ["Video consultation", picked("consultation")],
     ["Agreed to 50% deposit", picked("agree_deposit")],
   ];
   const message =
